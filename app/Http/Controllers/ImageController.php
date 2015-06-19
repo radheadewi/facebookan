@@ -25,6 +25,7 @@ class ImageController extends Controller {
     *
     * @return Response
     */
+
    public function store(Request $request)
    {
       // Validation //
@@ -52,7 +53,6 @@ class ImageController extends Controller {
         $image->caption = $request->input('caption');
         $image->description = $request->input('description');
         $image->save();
-
         return redirect('/image')->with('message','You just uploaded an image!');
    }
 
@@ -62,6 +62,7 @@ class ImageController extends Controller {
     * @param  int  $id
     * @return Response
     */
+
    public function show($id)
    {
       $image = Image::find($id);
@@ -74,6 +75,7 @@ class ImageController extends Controller {
     * @param  int  $id
     * @return Response
     */
+
    public function edit($id)
    {
       $image = Image::find($id);
@@ -86,6 +88,7 @@ class ImageController extends Controller {
     * @param  int  $id
     * @return Response
     */
+
    public function update(Request $request, $id)
    {
       // Validation //
@@ -125,6 +128,7 @@ class ImageController extends Controller {
     * @param  int  $id
     * @return Response
     */
+   
    public function destroy($id)
    {
       $image = Image::find($id);
